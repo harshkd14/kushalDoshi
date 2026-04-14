@@ -1,0 +1,501 @@
+/* ====================================
+   KUSHAL DOSHI - MEMORY WHEEL
+   Photography & Videography Portfolio
+   ==================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    background: #000000;
+    color: #FFFFFF;
+    overflow-x: hidden;
+}
+
+/* =====================================
+   NAVIGATION BAR
+   ===================================== */
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 13px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: #FFFFFF;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+.nav-links a {
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #aaa;
+}
+
+.nav-links a.active {
+    color: #FFFFFF;
+    border-bottom: 1px solid #FFFFFF;
+}
+
+/* HAMBURGER MENU (Hidden on desktop) */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+    z-index: 1001;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 2px;
+    background: #FFFFFF;
+    transition: all 0.3s ease;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(7px, 7px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* =====================================
+   HERO SECTION
+   ===================================== */
+
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: #000000;
+    animation: fadeInUp 1.2s ease-out;
+}
+
+/* =====================================
+   PAGE HEADER (FOR INDIVIDUAL PAGES)
+   ===================================== */
+
+.page-header {
+    padding: 150px 40px 60px 40px;
+    text-align: center;
+    background: #000000;
+    animation: fadeInUp 1.2s ease-out;
+}
+
+.page-header h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    margin-bottom: 15px;
+    color: #FFFFFF;
+}
+
+.page-header p {
+    font-size: 0.9rem;
+    font-weight: 300;
+    letter-spacing: 0.3em;
+    color: #999;
+    text-transform: uppercase;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero h1 {
+    font-size: clamp(3.5rem, 8vw, 8rem);
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    margin-bottom: 20px;
+    color: #FFFFFF;
+}
+
+.hero h2 {
+    font-size: 1rem;
+    font-weight: 300;
+    letter-spacing: 0.4em;
+    color: #aaa;
+    text-transform: uppercase;
+}
+
+.hero-logo {
+    max-width: 500px;
+    width: 80%;
+    height: auto;
+    animation: fadeInUp 1.5s ease-out;
+}
+
+/* =====================================
+   IMAGE GRID - 2 COLUMN LAYOUT (LIKE AVINASHJAISINGH.COM)
+   ===================================== */
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 equal columns */
+    gap: 3px;
+    background: #000;
+}
+
+.card {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    background: #111;
+    opacity: 0;
+    transform: translateY(25px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    width: 100%;
+}
+
+.card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* All cards take full width of their column */
+.card-full,
+.card-half,
+.card-third {
+    grid-column: span 1; /* Each takes one column */
+    width: 100%;
+}
+
+/* Images maintain natural aspect ratio */
+.card img {
+    width: 100%;
+    height: auto; /* Natural height - no cropping */
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.card:hover img {
+    transform: scale(1.04);
+}
+
+/* =====================================
+   OVERLAY
+   ===================================== */
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.35s ease;
+}
+
+.card:hover .overlay {
+    opacity: 1;
+}
+
+.overlay h3 {
+    font-size: 1.1rem;
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    margin-bottom: 8px;
+}
+
+.overlay p {
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    color: #ccc;
+    font-style: italic;
+}
+
+/* =====================================
+   AWARDS PAGE
+   ===================================== */
+
+.awards-content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px;
+}
+
+.awards-list {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.award-item {
+    display: flex;
+    gap: 40px;
+    padding: 30px 0;
+    border-bottom: 1px solid #222;
+    transition: all 0.3s ease;
+}
+
+.award-item:hover {
+    border-bottom-color: #444;
+}
+
+.award-year {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #FFFFFF;
+    min-width: 120px;
+    letter-spacing: 0.05em;
+}
+
+.award-details h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #FFFFFF;
+    margin-bottom: 8px;
+    letter-spacing: 0.05em;
+}
+
+.award-details p {
+    font-size: 0.9rem;
+    font-weight: 300;
+    color: #999;
+    letter-spacing: 0.1em;
+}
+
+/* =====================================
+   ABOUT PAGE
+   ===================================== */
+
+.about-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+}
+
+.about-bio h2,
+.about-clients h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #FFFFFF;
+    margin-bottom: 25px;
+    letter-spacing: 0.1em;
+}
+
+.about-bio h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #FFFFFF;
+    margin-top: 40px;
+    margin-bottom: 15px;
+    letter-spacing: 0.1em;
+}
+
+.about-bio p {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: #ccc;
+    margin-bottom: 20px;
+}
+
+.services-list {
+    list-style: none;
+    padding: 0;
+}
+
+.services-list li {
+    font-size: 0.9rem;
+    color: #999;
+    padding: 10px 0;
+    border-bottom: 1px solid #1a1a1a;
+    letter-spacing: 0.05em;
+}
+
+.clients-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.client-name {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #999;
+    padding: 15px;
+    border: 1px solid #222;
+    text-align: center;
+    letter-spacing: 0.1em;
+    transition: all 0.3s ease;
+}
+
+.client-name:hover {
+    color: #FFFFFF;
+    border-color: #444;
+}
+
+/* =====================================
+   FOOTER
+   ===================================== */
+
+footer {
+    background: #000;
+    padding: 40px;
+    text-align: center;
+}
+
+footer p {
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    color: #555;
+    text-transform: uppercase;
+}
+
+/* =====================================
+   RESPONSIVE - MOBILE
+   ===================================== */
+
+@media (max-width: 768px) {
+    nav {
+        padding: 15px 20px;
+    }
+
+    .logo {
+        font-size: 11px;
+    }
+
+    /* Show hamburger on mobile */
+    .hamburger {
+        display: flex;
+    }
+
+    /* Hide nav links by default on mobile */
+    .nav-links {
+        position: fixed;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.98);
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+        padding: 20px 0;
+        transform: translateY(-100%);
+        opacity: 0;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+        pointer-events: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    /* Show nav links when active */
+    .nav-links.active {
+        display: flex;
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: all;
+    }
+
+    .nav-links li {
+        width: 100%;
+        text-align: center;
+        padding: 15px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .nav-links li:last-child {
+        border-bottom: none;
+    }
+
+    .nav-links a {
+        font-size: 12px;
+        padding: 10px 20px;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero h2 {
+        font-size: 0.8rem;
+        letter-spacing: 0.3em;
+    }
+
+    .grid {
+        grid-template-columns: 1fr; /* Single column on mobile */
+        gap: 2px;
+    }
+
+    /* MOBILE - All cards full width with natural height */
+    .card-full,
+    .card-half,
+    .card-third {
+        grid-column: span 1;
+        width: 100%;
+    }
+
+    .card img {
+        width: 100%;
+        height: auto; /* Maintain natural aspect ratio */
+    }
+
+    .award-item {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .award-year {
+        font-size: 1.5rem;
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .clients-grid {
+        grid-template-columns: 1fr;
+    }
+}

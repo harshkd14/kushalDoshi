@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Awards - Kushal Doshi | Memory Wheel</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <div class="logo"><a href="index.html" style="color: inherit; text-decoration: none;">KUSHAL DOSHI</a></div>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="films.html">FILMS</a></li>
+            <li><a href="editorial.html">EDITORIAL</a></li>
+            <li><a href="advertising.html">ADVERTISING</a></li>
+            <li><a href="celebrity.html">CELEBRITY</a></li>
+            <li><a href="sports.html">SPORTS</a></li>
+            <li><a href="illustrations.html">ILLUSTRATIONS</a></li>
+            <li><a href="awards.html" class="active">AWARDS</a></li>
+            <li><a href="about.html">ABOUT + CLIENTELE</a></li>
+        </ul>
+    </nav>
+    <section class="page-header">
+        <h1>AWARDS</h1>
+        <p>Recognition & Achievements</p>
+    </section>
+    <section class="awards-content">
+        <div class="awards-list">
+            <div class="award-item">
+                <div class="award-year">2024</div>
+                <div class="award-details">
+                    <h3>Best Wedding Photographer</h3>
+                    <p>International Photography Awards</p>
+                </div>
+            </div>
+            <div class="award-item">
+                <div class="award-year">2023</div>
+                <div class="award-details">
+                    <h3>Excellence in Cinematography</h3>
+                    <p>National Film & Video Association</p>
+                </div>
+            </div>
+            <div class="award-item">
+                <div class="award-year">2023</div>
+                <div class="award-details">
+                    <h3>Editorial Photographer of the Year</h3>
+                    <p>Fashion Photography Guild</p>
+                </div>
+            </div>
+            <div class="award-item">
+                <div class="award-year">2022</div>
+                <div class="award-details">
+                    <h3>Gold Medal - Portrait Category</h3>
+                    <p>World Photography Awards</p>
+                </div>
+            </div>
+            <div class="award-item">
+                <div class="award-year">2022</div>
+                <div class="award-details">
+                    <h3>Best Commercial Campaign</h3>
+                    <p>Advertising Photographers Association</p>
+                </div>
+            </div>
+            <div class="award-item">
+                <div class="award-year">2021</div>
+                <div class="award-details">
+                    <h3>Rising Star Award</h3>
+                    <p>Indian Photography Federation</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer><p>© KUSHAL DOSHI - MEMORY WHEEL</p></footer>
+    <script>
+        // Mobile menu
+        const hamburger=document.querySelector('.hamburger');
+        const navLinks=document.querySelector('.nav-links');
+        if(hamburger){hamburger.addEventListener('click',()=>{hamburger.classList.toggle('active');navLinks.classList.toggle('active');});document.querySelectorAll('.nav-links a').forEach(link=>{link.addEventListener('click',()=>{hamburger.classList.remove('active');navLinks.classList.remove('active');});});}
+    </script>
+</body>
+</html>
+

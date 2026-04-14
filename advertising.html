@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advertising - Kushal Doshi | Memory Wheel</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <div class="logo"><a href="index.html" style="color: inherit; text-decoration: none;">KUSHAL DOSHI</a></div>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="films.html">FILMS</a></li>
+            <li><a href="editorial.html">EDITORIAL</a></li>
+            <li><a href="advertising.html" class="active">ADVERTISING</a></li>
+            <li><a href="celebrity.html">CELEBRITY</a></li>
+            <li><a href="sports.html">SPORTS</a></li>
+            <li><a href="illustrations.html">ILLUSTRATIONS</a></li>
+            <li><a href="awards.html">AWARDS</a></li>
+            <li><a href="about.html">ABOUT + CLIENTELE</a></li>
+        </ul>
+    </nav>
+    <section class="page-header">
+        <h1>ADVERTISING</h1>
+        <p>Commercial Campaigns & Brand Photography</p>
+    </section>
+    <section class="grid" id="portfolio-grid"></section>
+    <footer><p>© KUSHAL DOSHI - MEMORY WHEEL</p></footer>
+    <script>
+        const projects = [
+            {image:"https://images.unsplash.com/photo-1556155092-8707de31f9c4",title:"Brand Campaign",category:"Brand",orientation:"landscape"},
+            {image:"https://images.unsplash.com/photo-1542744173-8e7e53415bb0",title:"Corporate Branding",category:"Corporate",orientation:"landscape"},
+            {image:"https://images.unsplash.com/photo-1483058712412-4245e9b90334",title:"Product Launch",category:"Product",orientation:"landscape"},
+            {image:"https://images.unsplash.com/photo-1556740738-b6a63e27c4df",title:"Billboard Campaign",category:"Billboard",orientation:"landscape"},
+            {image:"https://images.unsplash.com/photo-1542744094-3a31f272c490",title:"Commercial Shoot",category:"Commercial",orientation:"landscape"},
+            {image:"https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e",title:"Fashion Ad",category:"Fashion",orientation:"portrait"},
+            {image:"https://images.unsplash.com/photo-1534528741775-53994a69daeb",title:"Beauty Campaign",category:"Beauty",orientation:"portrait"},
+            {image:"https://images.unsplash.com/photo-1531123897727-8f129e1688ce",title:"Model Campaign",category:"Model",orientation:"portrait"},
+            {image:"https://images.unsplash.com/photo-1490578474895-699cd4e2cf59",title:"Lifestyle Ad",category:"Lifestyle",orientation:"portrait"},
+            {image:"https://images.unsplash.com/photo-1544005313-94ddf0286df2",title:"Print Ad",category:"Print",orientation:"portrait"},
+            {image:"https://images.unsplash.com/photo-1505740420928-5e560c06d30e",title:"Product Ad",category:"Product",orientation:"square"},
+            {image:"https://images.unsplash.com/photo-1523275335684-37898b6baf30",title:"Watch Campaign",category:"Luxury",orientation:"square"},
+            {image:"https://images.unsplash.com/photo-1542291026-7eec264c27ff",title:"Sneaker Ad",category:"Fashion",orientation:"square"},
+            {image:"https://images.unsplash.com/photo-1546069901-ba9599a7e63c",title:"Food Ad",category:"F&B",orientation:"square"},
+        ];
+        const grid=document.getElementById('portfolio-grid');
+        projects.forEach((project,index)=>{
+            const card=document.createElement('div');
+            card.className=`card ${project.orientation}`;
+            card.style.transitionDelay=`${(index%4)*0.1}s`;
+            card.innerHTML=`<img src="${project.image}" alt="${project.title}" loading="lazy"><div class="overlay"><h3>${project.title}</h3><p>— view —</p></div>`;
+            grid.appendChild(card);
+        });
+        const observer=new IntersectionObserver((entries)=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target);}});},{threshold:0.1,rootMargin:'0px'});
+        document.querySelectorAll('.card').forEach(card=>observer.observe(card));
+        // Mobile menu
+        const hamburger=document.querySelector('.hamburger');
+        const navLinks=document.querySelector('.nav-links');
+        if(hamburger){hamburger.addEventListener('click',()=>{hamburger.classList.toggle('active');navLinks.classList.toggle('active');});document.querySelectorAll('.nav-links a').forEach(link=>{link.addEventListener('click',()=>{hamburger.classList.remove('active');navLinks.classList.remove('active');});});}
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About + Clientele - Kushal Doshi | Memory Wheel</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <div class="logo"><a href="index.html" style="color: inherit; text-decoration: none;">KUSHAL DOSHI</a></div>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="films.html">FILMS</a></li>
+            <li><a href="editorial.html">EDITORIAL</a></li>
+            <li><a href="advertising.html">ADVERTISING</a></li>
+            <li><a href="celebrity.html">CELEBRITY</a></li>
+            <li><a href="sports.html">SPORTS</a></li>
+            <li><a href="illustrations.html">ILLUSTRATIONS</a></li>
+            <li><a href="awards.html">AWARDS</a></li>
+            <li><a href="about.html" class="active">ABOUT + CLIENTELE</a></li>
+        </ul>
+    </nav>
+    <section class="page-header">
+        <h1>ABOUT + CLIENTELE</h1>
+        <p>Memory Wheel</p>
+    </section>
+    <section class="about-content">
+        <div class="about-bio">
+            <h2>About Kushal Doshi</h2>
+            <p>Award-winning photographer and cinematographer specializing in weddings, editorial, advertising, and commercial photography. Based in India, serving clients worldwide.</p>
+            <p>With over a decade of experience capturing life's most precious moments and creating compelling visual narratives for brands, I bring a unique blend of artistic vision and technical excellence to every project.</p>
+            
+            <h3>Services</h3>
+            <ul class="services-list">
+                <li>Wedding Photography & Videography</li>
+                <li>Editorial & Fashion Photography</li>
+                <li>Commercial & Advertising Campaigns</li>
+                <li>Celebrity & Portrait Photography</li>
+                <li>Sports & Action Photography</li>
+                <li>Corporate Events & Branding</li>
+                <li>Film Production & Cinematography</li>
+            </ul>
+
+            <h3>Contact</h3>
+            <p>
+                Email: <a href="mailto:contact@memorywheel.com" style="color: #999;">contact@memorywheel.com</a><br>
+                Phone: +91 XXXXX XXXXX<br>
+                Instagram: <a href="#" style="color: #999;">@kushaldoshi</a>
+            </p>
+        </div>
+        
+        <div class="about-clients">
+            <h2>Clientele</h2>
+            <div class="clients-grid">
+                <div class="client-name">Vogue India</div>
+                <div class="client-name">Harper's Bazaar</div>
+                <div class="client-name">GQ Magazine</div>
+                <div class="client-name">Elle India</div>
+                <div class="client-name">Cosmopolitan</div>
+                <div class="client-name">Nike India</div>
+                <div class="client-name">Adidas</div>
+                <div class="client-name">Puma</div>
+                <div class="client-name">Sony Pictures</div>
+                <div class="client-name">Red Bull</div>
+                <div class="client-name">Pepsi</div>
+                <div class="client-name">Coca-Cola</div>
+                <div class="client-name">Mercedes-Benz</div>
+                <div class="client-name">BMW India</div>
+                <div class="client-name">Audi</div>
+                <div class="client-name">Rolex</div>
+                <div class="client-name">TAG Heuer</div>
+                <div class="client-name">Louis Vuitton</div>
+            </div>
+        </div>
+    </section>
+    <footer><p>© KUSHAL DOSHI - MEMORY WHEEL</p></footer>
+    <script>
+        // Mobile menu
+        const hamburger=document.querySelector('.hamburger');
+        const navLinks=document.querySelector('.nav-links');
+        if(hamburger){hamburger.addEventListener('click',()=>{hamburger.classList.toggle('active');navLinks.classList.toggle('active');});document.querySelectorAll('.nav-links a').forEach(link=>{link.addEventListener('click',()=>{hamburger.classList.remove('active');navLinks.classList.remove('active');});});}
+    </script>
+</body>
+</html>
+
